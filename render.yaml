@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: flask-predict-upload
+    env: python
+    buildCommand: ""
+    startCommand: python main.py
+    plan: free
