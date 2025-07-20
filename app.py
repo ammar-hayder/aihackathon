@@ -103,10 +103,7 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 # --------------------- START APP ---------------------
-if __name__ == '__main__':
-    # Try to train on existing CSV (optional)
-    try:
-        train_model()
-    except Exception:
-        print("Model not trained. Please upload CSV using /upload.")
-    app.run(debug=True)
+try:
+    train_model()
+except Exception:
+    print("Model not trained. Please upload CSV using /upload.")

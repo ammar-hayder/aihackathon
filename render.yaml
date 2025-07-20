@@ -1,7 +1,9 @@
 services:
   - type: web
-    name: flask-predict-upload
-    env: python
+    name: flask-meal-predictor
+    runtime: python
     buildCommand: ""
-    startCommand: python main.py
-    plan: free
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
