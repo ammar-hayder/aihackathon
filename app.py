@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
@@ -6,6 +7,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
+CORS(app) 
 
 UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__))
 CSV_FILENAME = "orders.csv"
